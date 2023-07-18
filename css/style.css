@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background_color{
+    background-color: #1c84ee;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,30%);
+    margin-top: 50px;
+}
+.addNote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 93%;
+    background-color: #fff;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px 10px 20px 15px;
+}
+.addNote i{
+    border: 2px dotted #1c84ee;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.noteBox{
+    width: 93%;
+    background-color: #fff;
+    margin-right: 20px;
+    padding: 20px 10px 20px 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.bottomBox{
+    margin-top: 20px;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+}
+.bottom_dropdown{
+    text-align: right;
+}
