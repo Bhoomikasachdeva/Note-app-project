@@ -8,7 +8,7 @@ let modal_title = document.querySelector(".modal-title")
 let UpdateaddNote = document.querySelector("#UpdateaddNote")
 let UpdatenoteTitle = document.querySelector("#UpdatenoteTitle")
 let UpdatenoteDesc = document.querySelector("#UpdatenoteDesc")
-let NoteappWrap = document.querySelector(".NoteappWrap")
+
 //Data Array
 let dataArray = JSON.parse(localStorage.getItem('DataList')) || []
 // Get date 
@@ -130,9 +130,17 @@ function UpdateNote(index, title, desc) {
         dataArray[index].noteTitle = UpdatenoteTitle.value
         dataArray[index].noteDesc = UpdatenoteDesc.value
         localStorage.clear(dataArray)
+        wrapper.innerHTML = ""
         localStorage.setItem("DataList", JSON.stringify(dataArray))
+        wrapper.innerHTML = ` <div class="addNote">
+        <i class="fa-solid fa-plus" id="openBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+        <p>Add your Note</p>
+    </div>`
+
         dataArray.forEach((data, index) => {
-            wrapper.innerHTML = wrapper.innerHTML + `<div class="noteBox">
+            wrapper.innerHTML = wrapper.innerHTML + `
+            <div class="noteBox">
     <h2>${data.noteTitle}</h2>
     <p>${data.noteDesc}</p>
     <div class="bottomBox">
@@ -154,7 +162,14 @@ function UpdateNote(index, title, desc) {
     </div>
 </div>
     `
+
+    $('#exampleModal2').modal('hide');
         })
 
+       
+
     })
+
+
+   
 }
